@@ -1,0 +1,152 @@
+* {
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 580px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 26px;
+    font-weight: normal;
+}
+
+.booking-status {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 390px;
+    margin: 0 auto;
+}
+
+.booking-status li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.booking-status span {
+    height: 40px;
+    width: 40px;
+    display: block;
+    margin-right: 10px;
+}
+
+.booked span {
+    background-color: red;
+}
+
+.selected span {
+    background-color: #6cac07;
+}
+
+h3 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.booking-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+table, th, td {
+    border: 1px solid #c2b9b9;
+}
+
+table {
+    border-collapse: collapse;
+    width: 280px;
+    height: 240px;
+    text-align: center;
+}
+
+td:hover:not(.reserved):not(.other-month) {
+    background-color: #6cac07;
+    color: white;
+}
+
+.other-month {
+    color: gray;
+    pointer-events: none;
+}
+
+table td:not(.other-month):not(.reserved) {
+    cursor: pointer;
+}
+
+.reserved {
+    background-color: red;
+    color: white;
+    cursor: default;
+}
+
+.reserved[title]:hover::after {
+    content: 'Забронирован';
+    display: block;
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    z-index: 1;
+}
+
+
+.picked {
+    background-color: rgb(108, 172, 7);
+    color: white;
+}
+
+button {
+    align-self: center;
+    border: none;
+    background: rgb(108, 172, 7) linear-gradient(rgba(6, 222, 35, 1) 0%, rgba(112, 181, 4, 1) 46%, rgba(108, 172, 7, 1) 100%);
+    transition: background 2s ease-in-out;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: none;
+}
+
+button:hover {
+    background: rgb(108, 172, 7) linear-gradient(rgba(108, 172, 7, 1) 0%, rgba(112, 181, 4, 1) 46%, rgba(6, 222, 35, 1) 100%);
+}
+
+.booking-container p {
+    display: none;
+    color: rgb(108, 172, 7);
+    font-weight: bold;
+    align-self: center;
+}
+
+@media (max-width: 640px) {
+    .container {
+        width: 90%;
+    }
+
+    table {
+        margin: 0 auto;
+    }
+
+    .booking-container {
+        flex-direction: column;
+    }
+
+    .booking-container p, .booking-container button {
+        margin-top: 25px;
+    }
+
+}
